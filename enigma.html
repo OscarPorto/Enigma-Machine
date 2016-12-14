@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        main {
+            width: 100%;
+        }
+        
+        .column1 {
+            background-color: whitesmoke;
+            padding: 0px;
+            margin-right: 0px;
+            width: 15%;
+            float: left;
+        }
+        
+        .column2 {
+            background-color: white;
+            padding: 0px;
+            margin-right: 0px;
+            width: 70%;
+            float: left;
+        }
+        
+        .column3 {
+            background-color: whitesmoke;
+            padding: 0px;
+            margin-right: 0px;
+            width: 15%;
+            float: left;
+        }
+    </style>
+
+    <title>Enigma Machine</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+
+<body>
+    <div id="main">
+        <div class="column1">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+
+
+        <div class="column2">
+            <div style="text-align: center; border: 1px solid #8798AA; background: #333333;">
+                <br>
+                <img SRC="LogoEnigma.png" WIDTH=150 HEIGHT=60 ALT="Logo Universidad Tecnologica de Bolivar"> ---------------------------------------------------------------------------------------------------------------
+                <img SRC="LogoUTB.png" WIDTH=150 HEIGHT=60 ALT="Logo Universidad Tecnologica de Bolivar">
+                <img SRC="EnigMachLogo.png" WIDTH=700 HEIGHT=140 ALT="Logo EnigMAch">
+                <h1 align=center> <font color="white">EnigMach<sup>&reg;</sup>: An Enigma Machine Simulator</font></h1>
+
+            </div>
+
+            <div style="height: 1px; background-color: #8798AA ; text-align: center"></div>
+
+            <div style="text-align: center; border: 1px solid #8798AA; background: #D3D3D3;">
+                <br>
+
+                <b>EnigMach<sup>&reg;</sup> </b>es un simulador de la Máquina Enigma utilizado en la 2da Guerra Mundial por los Nazis, la cual se usó con el fin de
+                <br> transmitir de manera segura mensajes desde los centros de planificación a los campos de batallas en tierra, mar o aire.
+                <br>
+                <br>
+                <b>Instrucciones: </b>Para usar el simulador ingrese el texto plano en el campo de borde rojo y se hará el cifrado de manera automática.
+                <br>Si desea dar una configuracion inicial a los rotores (conocido como Ringstellung) ingrese las tres letras en cada campo con borde
+                <br>punteado en la tabla de <i>Configuración inicial de los rotores</i>. Para configurar el Stecker ingrese 26 letras en el campo con borde
+                <br>sombreado debajo del subtítulo <i>Ingrese el stecker</i> sin repetición
+            </div>
+
+            <br>
+
+            <table width="17%" border="3" cellpadding="1" cellspacing="1" bordercolor="#8798AA" style="margin: 0 auto;">
+
+                <tr>
+                    <th colspan="4" style="text-align:center;">Configuración inicial de los rotores</th>
+                </tr>
+
+                <tr>
+                    <th></th>
+                    <th style="text-align:center;">Rotor Izquierdo</th>
+                    <th style="text-align:center;">Rotor Medio</th>
+                    <th style="text-align:center;">Rotor Derecho</th>
+                </tr>
+
+                <tr>
+                    <th style="text-align:center;" bgcolor=# E6E6E6>Clave</th>
+                    <td>
+                        <textarea id="ClaveRL" rows="1" cols="13" maxlength="1" onpaste="return false" style="text-align:center; border-width: 1px;border: dashed; border-color: #333333;">A</textarea>
+                    </td>
+                    <td>
+                        <textarea id="ClaveRM" rows="1" cols="13" maxlength="1" onpaste="return false" style="text-align:center; border-width: 1px;border: dashed; border-color: #333333;">A</textarea>
+                    </td>
+                    <td>
+                        <textarea id="ClaveRR" rows="1" cols="13" maxlength="1" onpaste="return false" style="text-align:center; border-width: 1px;border: dashed; border-color: #333333;">A</textarea>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th style="text-align:center;" bgcolor=# E6E6E6>Posición Actual</th>
+                    <td>
+                        <textarea id="ActualRL" rows="1" cols="13" maxlength="1" onpaste="return false" readonly=”readonly” style="text-align:center;">A</textarea>
+                    </td>
+                    <td>
+                        <textarea id="ActualRM" rows="1" cols="13" maxlength="1" onpaste="return false" readonly=”readonly” style="text-align:center;">A</textarea>
+                    </td>
+                    <td>
+                        <textarea id="ActualRR" rows="1" cols="13" maxlength="1" onpaste="return false" readonly=”readonly” style="text-align:center;">A</textarea>
+                    </td>
+                </tr>
+
+            </table>
+
+            <center>
+                <p></p>
+                <button onclick=inputclave()>Cargar Clave</button>
+                <p></p>
+            </center>
+            <br>
+
+
+
+            <table width="17%" border="0" cellpadding="0" cellspacing="3" bordercolor="#8798AA" style="margin: 0 auto;">
+
+                <tr>
+                    <td></td>
+                    <th style="text-align:center;">Ingrese el stecker</th>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <button onclick="repeticion()" style='width:120px; height:30px'>Cargar Stecker</button>
+                    </td>
+                    <td>
+                        <textarea id="stecker" rows="1" cols="50" maxlength="26" onkeypress="return LetraMayuscula(event)" onpaste="return false" style="text-align:center; border-width: 1px;border: solid; border-color: #333333;"></textarea>
+                    </td>
+                    <td>
+                        <button onclick="prueba()" style='width:120px; height:30px'>Stecker prueba</button>
+                    </td>
+                </tr>
+
+            </table>
+            <br>
+
+            <center>
+                <p id="tablero" align=center></p>
+                <p id="conexion" align=center></p>
+            </center>
+
+            <center>
+                NCDHAGRZYDAVLHOXBOIZI
+            </center>
+
+
+            <br>
+            <div style="height: 1px; background-color: #8798AA ; text-align: center"></div>
+
+
+            <br>
+
+            <table width="17%" border="0" cellpadding="0" cellspacing="3" bordercolor="#8798AA" style="margin: 0 auto;">
+
+                <tr>
+                    <th style="text-align:center;">Texto plano</th>
+                    <td>
+                        <textarea id="txt" rows="1" cols="3" maxlength="1" onkeypress="return ValidaEntrada(event)" onpaste="return false" style="text-align:center; border-width: 1px;border: solid; border-color: #FF4000;"></textarea>
+                    </td>
+                    <th style="text-align:center;">Texto encriptado</th>
+                </tr>
+
+                <tr>
+                    <td>
+                        <textarea id="txtvisual" rows="5" cols="40" maxlength="500" onpaste="return false" readonly=”readonly”></textarea>
+                    </td>
+                    <td></td>
+                    <td>
+                        <textarea id="encrypt" rows="5" cols="40" maxlength="500" onpaste="return false" readonly=”readonly”></textarea>
+                    </td>
+                </tr>
+
+
+            </table>
+
+            <center>
+                <p></p>
+                <button onclick="reiniciar()">Reiniciar</button>
+            </center>
+
+
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+            <script src="js/bootstrap.min.js"></script>
+            <script src="js/test.js"></script>
+            <br>
+
+            <div style="text-align: center; border: 1px solid #8798AA; background: #151515;">
+                <br> <font color="white"><footer id="footer" align=center style=”font-size:20px;”>
+EnigMach<sup>&reg;</sup>: An Enigma Machine Simulator &copy; 2016, por Oscar Porto Solano. Uso bajo autorización del PhD. Juan Carlos Martinez.
+<p>Contactame al (+57) 310 5976609, oscports@gmail.com. Cartagena, Colombia</p>
+        <li><a href="https://www.facebook.com/oscports">Facebook</a> </li>
+        <li><a href="https://www.unitecnologica.edu.co">Universidad Tecnológica de Bólivar</a> </li>
+</footer></font>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="column3">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+    </div>
+</body>
+
+</html>
